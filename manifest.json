@@ -1,13 +1,14 @@
 {
-  "url": "https://your-domain.com/auto-clicker-pro/",
+  "url": "https://autoclickerpro.netlify.app/auto-clicker-pro/",
   "name": "AutoClicker Pro",
-  "icon_url": "https://your-domain.com/auto-clicker-pro/images/icon_256.png",
+  "icon_url": "https://autoclickerpro.netlify.app/auto-clicker-pro/images/icon_256.png",
   "icon_width": 256,
   "icon_height": 256,
-  "preview_url": "https://your-domain.com/auto-clicker-pro/images/preview.jpg", 
+  "preview_url": "https://autoclickerpro.netlify.app/auto-clicker-pro/images/preview.jpg", 
   "preview_width": 400,
   "preview_height": 200,
   "preview_bg": "#667eea",
   "orientation": "portrait",
   "access": ["any"]
+
 }
