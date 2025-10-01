@@ -507,6 +507,39 @@
             background: var(--primary-dark);
         }
     </style>
+    <script>
+// Защита от встраивания ВК
+if (window.parent !== window) {
+    // Если страница загружена в iframe (ВК)
+    document.addEventListener('DOMContentLoaded', function() {
+        // Блокируем скрипты ВК
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1 && (
+                        node.tagName === 'SCRIPT' && 
+                        node.src && 
+                        node.src.includes('vk.com')
+                    )) {
+                        node.remove();
+                    }
+                });
+            });
+        });
+        
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true
+        });
+    });
+}
+
+// Альтернативное решение - редирект на прямую ссылку
+if (window.location !== window.parent.location) {
+    // Если в iframe, открываем в новой вкладке
+    window.top.location.href = 'https://autoclickerpro.netlify.app/';
+}
+</script>
 </head>
 <body>
     <div class="game-container">
@@ -841,4 +874,5 @@
         init();
     </script>
 </body>
+
 </html>
